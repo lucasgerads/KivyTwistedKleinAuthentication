@@ -54,6 +54,10 @@ def submit(request):
         request.redirect('/fail')
         return succeed(None)
 
+@webapp.route('/protected')
+def protected(request):
+    return File("protected.html")
+
 @webapp.route('/api/random')
 def randomData(request):
     # how do i make this a protected route
