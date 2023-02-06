@@ -13,9 +13,9 @@ class TwistedServerApp(App):
     label = None
 
     def build(self):
-        self.label = Label(text="server started\n")
         endpoint = endpoints.serverFromString(reactor, "tcp:8080")
         endpoint.listen(Site(webapp.resource()))
+        self.label = Label(text="server started at http://localhost:8080/\n")
         return self.label
 
     def handle_message(self, msg):

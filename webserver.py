@@ -49,6 +49,7 @@ def submit(request):
     storedPassword =  pbkdf2_hmac('sha256', b'1234', b'some salt'*2, 1000)
     if (userPassword == storedPassword ):
         request.redirect('/success')
+        # How do I create a user session here?
         return succeed(None)
     else:
         request.redirect('/fail')
