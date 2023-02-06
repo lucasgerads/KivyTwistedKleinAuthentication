@@ -18,7 +18,7 @@ Activate virtual environment on Windows
 
     .\venv\Scripts\activate
 
-or Linux/OSx
+or Linux/macOS
 
     source venv/bin/activate
 
