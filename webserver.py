@@ -48,11 +48,11 @@ def submit(request):
     userPassword = pbkdf2_hmac('sha256', password[1].encode('utf-8'), b'some salt'*2, 1000)
     storedPassword =  pbkdf2_hmac('sha256', b'1234', b'some salt'*2, 1000)
     if (userPassword == storedPassword ):
-        request.redirect('html/success')
+        request.redirect('success')
         # How do I create a user session here?
         return succeed(None)
     else:
-        request.redirect('html/fail')
+        request.redirect('fail')
         return succeed(None)
 
 @webapp.route('/protected')
