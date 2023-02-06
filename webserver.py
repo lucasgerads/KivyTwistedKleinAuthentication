@@ -22,7 +22,7 @@ def index(request):
     requestCounter += 1
     app = App.get_running_app()
     app.handle_message(requestCounter)
-    return File("index.html")
+    return File("html/index.html")
 
 @webapp.route('/assets/<filename>')
 def assets(request, filename):
@@ -31,15 +31,15 @@ def assets(request, filename):
 
 @webapp.route('/login')
 def login(request):
-    return File("login.html")
+    return File("html/login.html")
 
 @webapp.route('/success')
 def success(request):
-    return File("success.html")
+    return File("html/success.html")
 
 @webapp.route('/fail')
 def fail(request):
-    return File("fail.html")
+    return File("html/fail.html")
 
 @webapp.route('/submit', methods=['POST'])
 def submit(request):
@@ -48,16 +48,16 @@ def submit(request):
     userPassword = pbkdf2_hmac('sha256', password[1].encode('utf-8'), b'some salt'*2, 1000)
     storedPassword =  pbkdf2_hmac('sha256', b'1234', b'some salt'*2, 1000)
     if (userPassword == storedPassword ):
-        request.redirect('/success')
+        request.redirect('html/success')
         # How do I create a user session here?
         return succeed(None)
     else:
-        request.redirect('/fail')
+        request.redirect('html/fail')
         return succeed(None)
 
 @webapp.route('/protected')
 def protected(request):
-    return File("protected.html")
+    return File("html/protected.html")
 
 @webapp.route('/api/random')
 def randomData(request):
