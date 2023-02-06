@@ -5,17 +5,22 @@ A simple example of how a twisted/klein webserver ist started from Kivy.
 
 ### Quickstart
 
-Clone code
+Clone code and change into directory
 
     git clone https://github.com/lucasgerads/KivyTwistedKleinAuthentication.git
+    cd KivyTwistedKleinAuthentication
 
 Create virtual environment 
 
-    python -m venv venv
+    python3 -m venv venv
 
-Activate virtual environment (on Windows)
+Activate virtual environment on Windows
 
     .\venv\Scripts\activate
+
+or Linux/OSx
+
+    source venv/bin/activate
 
 Install dependencies 
 
@@ -23,6 +28,6 @@ Install dependencies
 
 Run code
 
-    python main.py
+    python3 main.py
 
 Navigagate to `http://localhost:8080/`
