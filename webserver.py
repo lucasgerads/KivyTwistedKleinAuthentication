@@ -57,15 +57,14 @@ def submit(request):
 
 @webapp.route('/protected')
 def protected(request):
+    # How do i make this a password protected route?
     return File("html/protected.html")
 
 @webapp.route('/api/random')
 def randomData(request):
-    # How do i make this a protected route?
+    # How do i make this a password protected route?
     data = {}
-    someData = []
-    for i in range(10):
-        someData.append(random.randrange(start = 0, stop = 100, step=1))
+    someData = [random.randint(1,5) for _ in range(10)]
     data['apidata'] = someData
     json_data = json.dumps(data)
     print(json_data)
