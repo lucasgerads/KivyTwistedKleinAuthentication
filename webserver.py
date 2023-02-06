@@ -61,7 +61,7 @@ def protected(request):
 
 @webapp.route('/api/random')
 def randomData(request):
-    # how do i make this a protected route
+    # How do i make this a protected route?
     data = {}
     someData = []
     for i in range(10):
